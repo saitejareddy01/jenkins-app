@@ -25,8 +25,7 @@ pipeline {
 
         stage('Security Scan') {
             steps {
-                sh 'mvn org.owasp:dependency-check-maven:check -DfailBuildOnCVSS=7'
-            }
+                sh 'mvn org.owasp:dependency-check-maven:check -DfailBuildOnCVSS=7 -DautoUpdate=false'            }
         }
 
         stage('Package') {
